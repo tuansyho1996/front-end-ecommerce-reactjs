@@ -255,38 +255,57 @@
   gap: 10px;
 }
 
-.field-input {
-  height: var(--element-height);
-  padding: 0 20px;
-  background: var(--input-bg);
+.input-field{
+  height:var(--element-height);
   border-radius: 8px;
-  border: 1px solid var(--input-border);
-  width: 100%;
-  transition: all var(--transition);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  border:1px solid var(--input-border);
+  background-color: transparent;
+  outline: none;
+  width:100%;
 
-  &:focus-within {
-      outline: none;
-  }
-
-  &--error {
-      border-color: var(--red);
-  }
-
-  &::placeholder {
-      @apply text-gray transition-opacity;
-  }
-
-  &:focus::placeholder {
-      @apply opacity-0;
-  }
-
-  &:hover, &:focus {
-      border-color: var(--accent);
+  &:hover, &:focus{
+    border-color: var(--accent);
   }
 }
+.btn-field{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+
+// .field-input {
+//   height: var(--element-height);
+//   padding: 0 20px;
+//   background: var(--input-bg);
+//   border-radius: 8px;
+//   border: 1px solid var(--input-border);
+//   width: 100%;
+//   transition: all var(--transition);
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   white-space: nowrap;
+
+//   &:focus-within {
+//       outline: none;
+//   }
+
+//   &--error {
+//       border-color: var(--red);
+//   }
+
+//   &::placeholder {
+//       @apply text-gray transition-opacity;
+//   }
+
+//   &:focus::placeholder {
+//       @apply opacity-0;
+//   }
+
+//   &:hover, &:focus {
+//       border-color: var(--accent);
+//   }
+// }
 
 .field-label {
   font-weight: 700;

@@ -25,6 +25,7 @@ module.exports = {
         'yellow': 'var(--yellow)',
         'gray': 'var(--gray)',
         'gray-red': 'var(--text-dark)',
+        'shadow': 'var(--shadow)'
       },
       fontFamily: {
         'body': 'var(--body-font)',

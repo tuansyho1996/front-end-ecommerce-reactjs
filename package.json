@@ -9,10 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@faker-js/faker": "^8.4.1",
+    "@mui/material": "^5.15.18",
+    "dayjs": "^1.11.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
     "react-router-dom": "^6.23.1",
+    "react-truncate-markup": "^5.1.2",
     "sass": "^1.77.2",
     "styled-components": "^6.1.11",
     "styled-theming": "^2.2.0"
