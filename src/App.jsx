@@ -11,14 +11,17 @@ import { AppBar } from './layouts/Appbar'
 
 function App() {
   const [count, setCount] = useState(0)
-  const { theme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
   return (
     <>
       <ThemeProvider theme={{ theme: theme }}>
         <ThemeStyles />
         <div className="app">
           <div className="app_content">
-            <AppBar />
+            <AppBar
+              toggleTheme={toggleTheme}
+              theme={theme}
+            />
             <div className="router mt-5">
               <div>
                 <a href="https://vitejs.dev" target="_blank">

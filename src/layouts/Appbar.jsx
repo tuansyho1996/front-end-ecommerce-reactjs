@@ -5,6 +5,8 @@ import CustomTooltip from "@ui/CustomTooltip"
 import { useEffect, useState } from "react"
 import NotificationsPanel from "@ui/NotificationsPanel"
 import MessagesPanel from "@ui/MessagesPanel"
+import SideBar from "./SideBar"
+
 
 const LocaleMenu = ({ active, setActive, setOpen }) => {
   return (
@@ -31,12 +33,13 @@ const LocaleMenu = ({ active, setActive, setOpen }) => {
   )
 }
 
-export const AppBar = () => {
+export const AppBar = ({ theme, toggleTheme }) => {
   const [activeLocale, setActiveLocale] = useState('EN')
   const [flagActive, setFlagActive] = useState(LOCALES[0].flag)
   const [openOptionFlag, setOpenOptionFlag] = useState(false)
   const [openNotification, setOpenNotification] = useState(false)
   const [openMessages, setOpenMessages] = useState(false)
+  const [openSideBar, setOpenSideBar] = useState(false)
 
   useEffect(() => {
     const locale = LOCALES.find(item => item.alias === activeLocale)
@@ -48,16 +51,29 @@ export const AppBar = () => {
   return (
     <Headroom>
       <div className="flex items-center justify-between">
-        <button className="icon text-2xl leading-none">
+        <button className="icon text-2xl leading-none"
+          onClick={() => setOpenSideBar(true)}
+        >
           <i className="icon-bars" />
         </button>
         <div className="flex-1">
           <Search wrapperClass={'ml-3 search  max-w-[1054px] mr-auto'} />
         </div>
         <div className="flex items-center xl:gap-[26px]">
-          <button className="icon ">
-            <i className="icon-moon-o text-2xl" />
-          </button>
+          {
+            theme === 'light' ?
+              <button className="icon "
+                onClick={() => toggleTheme()}
+              >
+                <i className="icon-sun text-2xl" />
+              </button>
+              :
+              <button className="icon "
+                onClick={() => toggleTheme()}
+              >
+                <i className="icon-moon-o text-2xl" />
+              </button>
+          }
           <CustomTooltip title={<LocaleMenu active={activeLocale} setActive={setActiveLocale} setOpen={setOpenOptionFlag} />} open={openOptionFlag} >
             <button className='w-fit'
               onClick={() => setOpenOptionFlag(!openOptionFlag)}
@@ -79,7 +95,7 @@ export const AppBar = () => {
             <button className="text-lg leading-none text-gray dark:text-gray-red xl:text-[20px]"
               onClick={() => setOpenMessages(true)}
             >
-              <i className="icon-message" />
+              <i className="icon-message-square" />
             </button>
             <span className="absolute -top-1.5 -right-1.5 xl:-top-5 xl:-right-4 rounded-full bg-green w-3 h-3 xl:w-6 xl:h-6 xl:flex xl:items-center xl:justify-center border-[2px] border-body ">
               <span>2</span>
@@ -98,6 +114,11 @@ export const AppBar = () => {
           isOpen={openMessages}
           close={() => setOpenMessages(false)}
           open={() => setOpenMessages(true)}
+        />
+        <SideBar
+          isOpen={openSideBar}
+          close={() => setOpenSideBar(false)}
+          open={() => setOpenSideBar(true)}
         />
       </div>
     </Headroom>
