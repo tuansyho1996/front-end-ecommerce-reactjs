@@ -3,11 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './styles/index.scss'
 
-// import './App.css'
 import { ThemeProvider } from 'styled-components'
 import { useTheme } from './contexts/themeContext'
 import ThemeStyles from './styles/theme'
 import { AppBar } from './layouts/Appbar'
+import { Routes, Route } from 'react-router-dom'
+import SalesAnalytics from '@pages/SalesAnalytics'
+import SellerLists from '@pages/SellerLists'
+import SellerTable from '@pages/SellerTable'
+import SellersGrid from '@pages/SellersGrid'
+import SellerProfiles from '@pages/SellerProfiles'
+import RevenuByPeriod from '@pages/RevenueByPeriod'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,28 +28,14 @@ function App() {
               toggleTheme={toggleTheme}
               theme={theme}
             />
-            <div className="router mt-5">
-              <div>
-                <a href="https://vitejs.dev" target="_blank">
-                  <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                  <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-              </div>
-              <h1>Vite + React</h1>
-              <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                  count is {count}
-                </button>
-                <p>
-                  Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-              </div>
-              <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-              </p>
-            </div>
+            <Routes>
+              <Route path='/' element={<SalesAnalytics />} />
+              <Route path='/sellers-list' element={<SellerLists />} />
+              <Route path='/sellers-table' element={<SellerTable />} />
+              <Route path='/sellers-grid' element={<SellersGrid />} />
+              <Route path='/seller-profile' element={<SellerProfiles />} />
+              <Route path='/revenue-by-period' element={<RevenuByPeriod />} />
+            </Routes>
           </div>
         </div>
       </ThemeProvider>

@@ -1,21 +1,21 @@
 /* UI elements */
 
-.card {
-  background: var(--widget);
-  box-shadow: var(--shadow);
-  border-radius: 6px;
-  padding: 20px;
-  transition: box-shadow var(--transition);
+// .card {
+//   background: var(--widget);
+//   box-shadow: var(--shadow);
+//   border-radius: 6px;
+//   padding: 20px;
+//   transition: box-shadow var(--transition);
 
-  &:not(.no-hover) {
-      &:hover {
-          box-shadow: var(--hover-shadow);
-      }
-  }
-  @screen md {
-      padding: 26px;
-  }
-}
+//   &:not(.no-hover) {
+//       &:hover {
+//           box-shadow: var(--hover-shadow);
+//       }
+//   }
+//   @screen md {
+//       padding: 26px;
+//   }
+// }
 
 .icon {
   color: var(--accent);
@@ -688,8 +688,9 @@
   text-transform: uppercase;
   font-family: var(--heading-font);
   font-weight: bold;
+  background: var(--widget)!important;
   font-size: 12px;
-  padding: 0 !important;
+  // padding: 0 !important;
 
   &:before {
       display: none;
@@ -721,7 +722,21 @@
 }
 
 .ant-spin-container {
-  display: flex;
+  // display: flex;
+}
+.ant-pagination-item a,.ant-pagination-prev button,.ant-pagination-next button,.ant-pagination-item-link-icon,.ant-pagination-item-ellipsis{
+  color: var(--accent)!important;
+  font-size: 16px!important;
+}
+.ant-pagination-item.ant-pagination-item-active {
+  background-color: var(--accent);
+  a{
+    color: var(--text)!important;
+  }
+}
+.ant-pagination-item{
+  border: solid 1px var(--accent)!important;
+  
 }
 
 .ant-picker-header-view button {
@@ -812,4 +827,18 @@
 
 .leaflet-popup-close-button {
   display: none;
+}
+
+.focus-tag:focus{
+  background-color: var(--accent);
+}
+.card{
+  box-shadow: var(--shadow);
+}
+.card:hover{
+  box-shadow: var(--hover-shadow);
+}
+th.MuiTableCell-root,td.MuiTableCell-root{
+  color:var(--text)!important;
+  font-weight: bold;
 }

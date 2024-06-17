@@ -10,7 +10,12 @@ export default defineConfig({
       '@constants': '/src/constants',
       '@ui': '/src/ui',
       '@assets': '/src/assets',
-      '@db': '/src/db'
+      '@db': '/src/db',
+      '@components': '/src/components',
+      '@layouts': '/src/layouts',
+      '@pages': '/src/pages',
+      '@utils': '/src/utils',
+      '@widgets': '/src/widgets'
     }
   }
 })
