@@ -20,6 +20,18 @@ const LinearProgressPercent = (props) => {
       case 'services':
         setColorBar('!bg-yellow')
         break;
+      case 'bg-accent':
+        setColorBar('!bg-accent')
+        break;
+      case 'bg-red':
+        setColorBar('!bg-red')
+        break;
+      case 'bg-green':
+        setColorBar('!bg-green')
+        break;
+      case 'bg-yellow':
+        setColorBar('!bg-yellow')
+        break;
       default:
         setColorBar('!bg-white')
         break;

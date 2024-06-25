@@ -6,7 +6,7 @@ const RevenuInfoBox = (props) => {
   return (
     <div className="p-5 flex flex-col gap-5 bg-widget basis-1/2 rounded-lg  card font-bold">
       <div className="flex justify-between items-start">
-        <ItemIcon bg={props.bg} icon={props.icon} width="w-12" height="h-12" />
+        <ItemIcon bg={props.bg} icon={props.icon} />
         <i className="icon-dots-three-vertical text-2xl" />
       </div>
       <div className="flex justify-between items-center">

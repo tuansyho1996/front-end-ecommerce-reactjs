@@ -49,3 +49,50 @@ export const sortSellers = (sellers, sort) => {
       return sellers
   }
 }
+
+export const sortProducts = (products, typeSort) => {
+  switch (typeSort) {
+    case 'Best Selling':
+      return products.sort((a, b) => {
+        if (a.sold > b.sold) {
+          return -1
+        }
+        if (a.sold < b.sold) {
+          return 1
+        }
+        return 0
+      })
+    case 'Available':
+      return products.sort((a, b) => {
+        if (a.in_stock > b.in_stock) {
+          return -1
+        }
+        if (a.in_stock < b.in_stock) {
+          return 1
+        }
+        return 0
+      })
+    case 'Price: High to Low':
+      return products.sort((a, b) => {
+        if (a.sale_price > b.sale_price) {
+          return -1
+        }
+        if (a.sale_price < b.sale_price) {
+          return 1
+        }
+        return 0
+      })
+    case 'Price: Low to High':
+      return products.sort((a, b) => {
+        if (a.sale_price > b.sale_price) {
+          return 1
+        }
+        if (a.sale_price < b.sale_price) {
+          return -1
+        }
+        return 0
+      })
+    default:
+      return products
+  }
+}

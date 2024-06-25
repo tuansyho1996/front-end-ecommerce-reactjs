@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 import { Table } from "antd"
 import { COLUMN_SELLER_TABLE } from "@constants/columnDefs"
 import _ from 'lodash'
-import { sortSellers } from "../utils/helpers"
+import { sortSellers } from "../../utils/helpers"
 
 const SellerTable = () => {
   const [data, setData] = useState(null)

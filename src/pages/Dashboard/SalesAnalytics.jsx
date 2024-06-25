@@ -1,13 +1,13 @@
-import PagesHeader from "../layouts/PagesHeader"
+import PagesHeader from "../../layouts/PagesHeader"
 import logo from "@assets/logo/zone style-logo/logo.png"
 import { useState } from "react"
 import { Popover } from "@mui/material"
-import Counter from "../widgets/Counter"
+import Counter from "../../widgets/Counter"
 import Balance from "@components/Balance"
-import ChartSalesStatics from "../components/ChartSalesStatics"
-import TotalReport from "../components/TotalReport"
-import ItemIcon from "../widgets/ItemIcon"
-import Trend from "../widgets/Trend"
+import ChartSalesStatics from "../../components/ChartSalesStatics"
+import TotalReport from "../../components/TotalReport"
+import ItemIcon from "../../widgets/ItemIcon"
+import Trend from "../../widgets/Trend"
 
 
 const SalesAnalytics = () => {
@@ -57,7 +57,7 @@ const SalesAnalytics = () => {
 
             <div className="flex gap-6 w-full font-bold">
               <div className="flex gap-3">
-                <ItemIcon icon='diamond' bg='bg-emerald-600' />
+                <ItemIcon px='px-4' py="py-4" icon='diamond' bg='bg-emerald-600' />
                 <div className="flex flex-col gap-1">
                   <Counter number={15346} />
                   <p>Income</p>
@@ -65,7 +65,7 @@ const SalesAnalytics = () => {
                 </div>
               </div>
               <div className="flex gap-3">
-                <ItemIcon icon='banknote' bg='bg-red' />
+                <ItemIcon px='px-4' py="py-4" icon='banknote' bg='bg-red' />
                 <div className="flex flex-col gap-1">
                   <Counter number={53421} />
                   <p>Income</p>
@@ -73,7 +73,7 @@ const SalesAnalytics = () => {
                 </div>
               </div>
               <div className="flex gap-3">
-                <ItemIcon icon='cart-plus' bg='bg-sky-600' />
+                <ItemIcon px='px-4' py="py-4" icon='cart-plus' bg='bg-sky-600' />
                 <div className="flex flex-col gap-1">
                   <Counter number={5362} />
                   <p>Income</p>

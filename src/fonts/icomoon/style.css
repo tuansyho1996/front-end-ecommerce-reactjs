@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ewdj7v');
-  src:  url('fonts/icomoon.eot?ewdj7v#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ewdj7v') format('truetype'),
-    url('fonts/icomoon.woff?ewdj7v') format('woff'),
-    url('fonts/icomoon.svg?ewdj7v#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?6s3907');
+  src:  url('fonts/icomoon.eot?6s3907#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6s3907') format('truetype'),
+    url('fonts/icomoon.woff?6s3907') format('woff'),
+    url('fonts/icomoon.svg?6s3907#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,57 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-drive_file_move:before {
+  content: "\e91a";
+}
+.icon-add:before {
+  content: "\e91b";
+}
+.icon-miscellaneous_services:before {
+  content: "\e919";
+}
+.icon-link:before {
+  content: "\e914";
+}
+.icon-message-square:before {
+  content: "\e900";
+}
+.icon-t-shirt:before {
+  content: "\e917";
+}
+.icon-banknote:before {
+  content: "\e90d";
+}
+.icon-check:before {
+  content: "\e90d";
+}
+.icon-bill:before {
+  content: "\e90d";
+}
+.icon-money:before {
+  content: "\e90d";
+}
+.icon-cash:before {
+  content: "\e90d";
+}
+.icon-pricetags:before {
+  content: "\e909";
+}
+.icon-tags:before {
+  content: "\e909";
+}
+.icon-prices:before {
+  content: "\e909";
+}
+.icon-shop:before {
+  content: "\e909";
+}
+.icon-ecommerce:before {
+  content: "\e909";
+}
+.icon-dots-three-vertical:before {
+  content: "\e912";
+}
 .icon-transfer:before {
   content: "\e916";
 }
@@ -100,44 +151,14 @@
 .icon-pencil:before {
   content: "\e911";
 }
-.icon-banknote:before {
-  content: "\e90d";
+.icon-glass:before {
+  content: "\e9a0";
 }
-.icon-check:before {
-  content: "\e90d";
+.icon-image:before {
+  content: "\e91c";
 }
-.icon-bill:before {
-  content: "\e90d";
-}
-.icon-money:before {
-  content: "\e90d";
-}
-.icon-cash:before {
-  content: "\e90d";
-}
-.icon-pricetags:before {
-  content: "\e909";
-}
-.icon-tags:before {
-  content: "\e909";
-}
-.icon-prices:before {
-  content: "\e909";
-}
-.icon-shop:before {
-  content: "\e909";
-}
-.icon-ecommerce:before {
-  content: "\e909";
-}
-.icon-link:before {
-  content: "\e914";
-}
-.icon-message-square:before {
-  content: "\e900";
-}
-.icon-dots-three-vertical:before {
-  content: "\e912";
+.icon-laptop:before {
+  content: "\e918";
 }
 .icon-pie-chart:before {
   content: "\e915";

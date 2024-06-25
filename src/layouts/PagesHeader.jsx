@@ -2,7 +2,7 @@ import dayjs from "dayjs"
 
 const PagesHeader = ({ title }) => {
   return (
-    <div className="pages-header w-full h-[100px] flex justify-between my-5 bg-widget rounded-lg items-center px-10 shadow font-bold">
+    <div className="pages-header w-full h-[100px] flex justify-between my-10 bg-widget rounded-lg items-center px-10 shadow font-bold">
       <div className="path-page text-4xl  ">
         {title}
       </div>

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
-import PagesHeader from "../layouts/PagesHeader.jsx"
-import RangeDate from "../ui/RangeDates/index.jsx"
+import PagesHeader from "../../layouts/PagesHeader.jsx"
+import RangeDate from "../../ui/RangeDates/index.jsx"
 import { Select, FormControl, FormHelperText, MenuItem, InputLabel, Stack, Pagination } from "@mui/material"
-import SelectSort from "../ui/SelectSort/index.jsx"
-import sellers from "../db/sellers.js"
-import ItemIcon from "../widgets/ItemIcon.jsx"
-import Counter from "../widgets/Counter.jsx"
+import SelectSort from "../../ui/SelectSort/index.jsx"
+import sellers from "../../db/sellers.js"
+import ItemIcon from "../../widgets/ItemIcon.jsx"
+import Counter from "../../widgets/Counter.jsx"
 import { Rating } from "@mui/material"
-import LinearProgressCenter from "../widgets/LinearProgressPercent.jsx"
+import LinearProgressCenter from "../../widgets/LinearProgressPercent.jsx"
 
 const sellerPerPagination = 4
 

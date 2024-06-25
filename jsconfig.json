@@ -6,8 +6,8 @@
       "@components/*": [
         "components/*"
       ],
-      "@layout/*": [
-        "layout/*"
+      "@layouts/*": [
+        "layouts/*"
       ],
       "@ui/*": [
         "ui/*"

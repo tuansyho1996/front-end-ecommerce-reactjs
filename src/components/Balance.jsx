@@ -1,4 +1,4 @@
-import imgBalance from '@assets/banner/balance.webp'
+import imgBalance from '@assets/banners/balance.webp'
 import { formatNumber } from '../utils/helpers'
 
 const Balance = ({ balance, nameClass }) => {

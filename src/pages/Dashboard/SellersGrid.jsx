@@ -6,7 +6,7 @@ import sellers from "@db/sellers"
 import { Popover } from "@mui/material"
 import { useEffect, useState } from "react"
 import { sortSellers } from "@utils/helpers"
-import { useProfile } from "../contexts/profileContext"
+import { useProfile } from "../../contexts/profileContext"
 import { Link } from "react-router-dom"
 import { Menu, MenuItem } from "@mui/material"
 

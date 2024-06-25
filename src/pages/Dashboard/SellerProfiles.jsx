@@ -1,7 +1,7 @@
 import PagesHeader from "@layouts/PagesHeader"
 import { LinearProgress, Rating, Stack } from "@mui/material"
 import RangeDate from "@ui/RangeDates"
-import { useProfile } from "../contexts/profileContext"
+import { useProfile } from "../../contexts/profileContext"
 import { Link } from "react-router-dom"
 import ItemIcon from "@widgets/ItemIcon"
 import Trend from "@widgets/Trend"
@@ -69,7 +69,7 @@ const SellerProfiles = () => {
         <div className="basis-1/6 h-[182px] bg-widget card rounded-lg">
           <div className="flex justify-between p-5">
             <div className="flex flex-col gap-1 font-bold">
-              <ItemIcon icon='transfer' bg='bg-green' width="w-[50px]" height="h-[50px]" />
+              <ItemIcon px="px-5" icon='transfer' bg='bg-green' />
               <div>Transactions</div>
               <Trend trend='up' rate={45.5} />
               <span className="text-xl flex items-center gap-0.5">
@@ -143,7 +143,7 @@ const SellerProfiles = () => {
           </div>
           <div className="flex gap-10  font-bold">
             <div className="flex gap-3 p-5 bg-widget basis-1/3 card rounded-lg items-center">
-              <ItemIcon icon='diamond' bg='bg-sky-500' />
+              <ItemIcon px="px-3" py="py-3" icon='diamond' bg='bg-sky-500' />
               <div className=" flex flex-col justify-between">
                 <div className="text-xl">
                   {formatNumber(sumProfit(), '$')}
@@ -153,7 +153,7 @@ const SellerProfiles = () => {
               </div>
             </div>
             <div className="flex gap-3 p-5 bg-widget basis-1/3 card rounded-lg items-center">
-              <ItemIcon icon='cart' bg='bg-green' />
+              <ItemIcon px="px-3" py="py-3" icon='cart' bg='bg-green' />
               <div className=" flex flex-col justify-between">
                 <div className="text-xl">
                   {formatNumber(profile?.sales, '$')}
@@ -163,7 +163,7 @@ const SellerProfiles = () => {
               </div>
             </div>
             <div className="flex gap-3 p-5 bg-widget basis-1/3 card rounded-lg items-center">
-              <ItemIcon icon='money' bg='bg-red' />
+              <ItemIcon px="px-3" py="py-3" icon='money' bg='bg-red' />
               <div className=" flex flex-col justify-between">
                 <div className="text-xl">
                   {formatNumber(profile?.sales, '$')}
