@@ -11,6 +11,7 @@ import ProfitPerformance from "@widgets/ProfitPerformance"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material"
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import AverageReferralRate from "@widgets/AverageReferralRate"
+import TableRevenuGeneral from "@components/TableRevenuGeneral"
 
 
 
@@ -86,37 +87,7 @@ const RevenueByPeriod = () => {
           </div>
           <div className="flex gap-5">
             <div className=" basis-7/12 flex flex-col gap-3">
-              <TableContainer component={Paper}
-                style={{
-                  backgroundColor: 'var(--widget)',
-                }}
-              >
-                <Table aria-label="simple table" padding="checkbox" >
-                  <TableHead>
-                    <TableRow >
-                      <TableCell>Year</TableCell>
-                      <TableCell >Customers</TableCell>
-                      <TableCell >Trend</TableCell>
-                      <TableCell >Revenu</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {rows.map((row) => (
-                      <TableRow
-                        key={row.year}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                      >
-                        <TableCell component="th" scope="row">
-                          {row.year}
-                        </TableCell>
-                        <TableCell >{row.customers}</TableCell>
-                        <TableCell >{row.trend}</TableCell>
-                        <TableCell >{row.revenue}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+              <TableRevenuGeneral rows={rows} bg='var(--widget)' />
               <div className="flex gap-3 font-bold justify-between">
                 <div className="flex flex-col ">
                   <div className="text-2xl">{formatNumberBasic(32451)}</div>

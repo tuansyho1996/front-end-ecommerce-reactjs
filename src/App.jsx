@@ -19,6 +19,8 @@ import ProductsGrid from '@pages/Products/ProductsGrid'
 import ProductsManagement from '@pages/Products/ProductsManagement'
 import ProductEditor from '@pages/Products/ProductEditor'
 import BannerOffers from '@pages/Products/BannerOffers'
+import Orders from '@pages/Orders'
+import Statistics from '@pages/Statistics'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -45,6 +47,8 @@ function App() {
               <Route path='/products-management' element={<ProductsManagement />} />
               <Route path='/product-editor' element={<ProductEditor />} />
               <Route path='/banners' element={<BannerOffers />} />
+              <Route path='/orders' element={<Orders />} />
+              <Route path='/statistics' element={<Statistics />} />
             </Routes>
           </div>
         </div>

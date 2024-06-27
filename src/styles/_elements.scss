@@ -842,3 +842,18 @@ th.MuiTableCell-root,td.MuiTableCell-root{
   color:var(--text)!important;
   font-weight: bold;
 }
+.leaflet-marker-icon .dot {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  &.bg-header {
+      background: var(--header-light) !important;
+  }
+}

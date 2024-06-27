@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 
 
-const LinearProgressPercent = (props) => {
+const LinearProgressPercent = ({ size = '20px', ...props }) => {
   const [colorBar, setColorBar] = useState('')
   useEffect(() => {
     switch (props.label) {
@@ -46,7 +46,7 @@ const LinearProgressPercent = (props) => {
       variant="determinate"
       value={props.value}
       sx={{
-        height: '20px',
+        height: size,
         backgroundColor: 'var(--input-border)'
       }}
     />

@@ -24,6 +24,7 @@
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.23.1",
     "react-truncate-markup": "^5.1.2",
     "react-visibility-sensor": "^5.1.1",

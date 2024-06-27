@@ -96,3 +96,35 @@ export const sortProducts = (products, typeSort) => {
       return products
   }
 }
+export const sortOrder = (orders, typeSort) => {
+  switch (typeSort) {
+    case 'default sorting':
+      return orders
+    case 'by name: A-Z':
+      return orders.sort((a, b) => {
+        if (a.product.name.toLowerCase() > b.product.name.toLowerCase()) {
+          return 1
+        }
+        if (a.product.name.toLowerCase() < b.product.name.toLowerCase()) {
+          return -1
+        }
+        return 0
+      })
+    case 'by name Z-A':
+      return orders.sort((a, b) => {
+        if (a.product.name.toLowerCase() > b.product.name.toLowerCase()) {
+          return -1
+        }
+        if (a.product.name.toLowerCase() < b.product.name.toLowerCase()) {
+          return 1
+        }
+        return 0
+      })
+    case 'rating:high to low':
+      return orders.sort((a, b) => b.rating - a.rating)
+    case 'rating:low to high':
+      return orders.sort((a, b) => a.rating - b.rating)
+    default:
+      return orders
+  }
+}

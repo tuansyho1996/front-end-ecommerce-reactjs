@@ -14,6 +14,12 @@ const RangeDatePicker = styled(RangePicker)`
   .ant-picker-separator{
     color:var(--text)!important
   }
+  .ant-picker-suffix{
+    color:var(--text)!important
+  }
+  .ant-picker-input>input::placeholder{
+    color:var(--text)!important
+  }
 `
 
 export default RangeDatePicker

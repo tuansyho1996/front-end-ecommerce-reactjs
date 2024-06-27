@@ -1,13 +1,12 @@
 import { TextField } from "@mui/material"
 import { MenuItem, Box } from "@mui/material"
 
-const TextFieldInput = ({ label, select = false, data, padding = '' }) => {
-  console.log('padding', padding.slice(-4, -1))
+const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', change }) => {
   return (
-
     <TextField
-      className={`${padding}`}
+      className={`${padding} !min-w-64`}
       select={select}
+      onChange={change}
       label={label}
       sx={{
         input: { color: 'var(--text)', },
@@ -20,6 +19,9 @@ const TextFieldInput = ({ label, select = false, data, padding = '' }) => {
         },
         '.MuiSelect-select': {
           textTransform: 'capitalize'
+        },
+        '.MuiInputBase-root': {
+          minWidth: minW
         }
       }}
       SelectProps={{
@@ -35,12 +37,12 @@ const TextFieldInput = ({ label, select = false, data, padding = '' }) => {
       }}
       fullWidth
       focused
-      value={data ? data[0] : null}
+      defaultValue={data[0]}
     >
       {
         // select &&
         data?.map((option, index) => (
-          <MenuItem key={index} value={option}>
+          <MenuItem className="min-w-64" key={index} value={option}>
             {option}
           </MenuItem>
         ))

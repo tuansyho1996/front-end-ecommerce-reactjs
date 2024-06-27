@@ -1,9 +1,9 @@
 import RangeDatePicker from "./styles";
 import dayjs from "dayjs";
-import { DatePicker } from "antd";
 const RangeDate = () => {
   return (
     <RangeDatePicker
+      focused
       className="bg-body p-2 border-border border-[1px]"
       format="YYYY/MM/DD"
       defaultValue={[
