@@ -42,7 +42,7 @@ const LinearProgressPercent = ({ size = '20px', ...props }) => {
       classes={{
         bar: colorBar
       }}
-      className="rounded-full"
+      className="rounded-full w-full"
       variant="determinate"
       value={props.value}
       sx={{

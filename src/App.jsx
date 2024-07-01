@@ -21,6 +21,7 @@ import ProductEditor from '@pages/Products/ProductEditor'
 import BannerOffers from '@pages/Products/BannerOffers'
 import Orders from '@pages/Orders'
 import Statistics from '@pages/Statistics'
+import Reviews from '@pages/Reviews'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -49,6 +50,7 @@ function App() {
               <Route path='/banners' element={<BannerOffers />} />
               <Route path='/orders' element={<Orders />} />
               <Route path='/statistics' element={<Statistics />} />
+              <Route path='/reviews' element={<Reviews />} />
             </Routes>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import { TextField } from "@mui/material"
 import { MenuItem, Box } from "@mui/material"
 
-const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', change }) => {
+const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', change, fullWidth = true }) => {
   return (
     <TextField
-      className={`${padding} !min-w-64`}
+      className={`${padding} `}
       select={select}
       onChange={change}
       label={label}
@@ -12,7 +12,8 @@ const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', 
         input: { color: 'var(--text)', },
         label: { paddingTop: padding.slice(-4, -1), },
         '.Mui-focused': {
-          color: 'var(--text)'
+          color: 'var(--text)',
+          border: 'none'
         },
         '.MuiSvgIcon-root': {
           color: 'var(--text)'
@@ -20,9 +21,12 @@ const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', 
         '.MuiSelect-select': {
           textTransform: 'capitalize'
         },
-        '.MuiInputBase-root': {
-          minWidth: minW
+
+        '.MuiOutlinedInput-notchedOutline': {
+          border: '0!important'
         }
+
+
       }}
       SelectProps={{
         MenuProps: {
@@ -31,11 +35,14 @@ const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', 
               backgroundColor: 'var(--widget)',
               color: 'var(--text)',
               textTransform: 'capitalize'
+            },
+            '.MuiPaper-root': {
+              boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);'
             }
           }
         }
       }}
-      fullWidth
+      // fullWidth={fullWidth}
       focused
       defaultValue={data[0]}
     >
@@ -47,7 +54,7 @@ const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', 
           </MenuItem>
         ))
       }
-    </TextField>
+    </TextField >
 
   )
 }

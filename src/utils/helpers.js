@@ -128,3 +128,17 @@ export const sortOrder = (orders, typeSort) => {
       return orders
   }
 }
+export const sortReviews = (reviews, typeSort) => {
+  switch (typeSort) {
+    case 'Recent':
+      return reviews.sort((a, b) => b.timestamp - a.timestamp)
+    case 'Oldest':
+      return reviews.sort((a, b) => a.timestamp - b.timestamp)
+    case 'Highest rating':
+      return reviews.sort((a, b) => b.rating - a.rating)
+    case 'Lowest rating':
+      return reviews.sort((a, b) => a.rating - b.rating)
+    default:
+      return reviews
+  }
+}
