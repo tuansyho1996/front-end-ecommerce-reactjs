@@ -142,3 +142,17 @@ export const sortReviews = (reviews, typeSort) => {
       return reviews
   }
 }
+export const sortTransactions = (transactions, typeSort) => {
+  switch (typeSort) {
+    case 'Recent':
+      return transactions.sort((a, b) => b.timestamp - a.timestamp)
+    case 'Oldest':
+      return transactions.sort((a, b) => a.timestamp - b.timestamp)
+    case 'Amount:High to Low':
+      return transactions.sort((a, b) => b.fee - a.fee)
+    case 'Amount:Low to high':
+      return transactions.sort((a, b) => a.fee - b.fee)
+    default:
+      return transactions
+  }
+}

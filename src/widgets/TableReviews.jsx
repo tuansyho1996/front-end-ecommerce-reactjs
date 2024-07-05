@@ -17,7 +17,7 @@ const TableReviews = ({ reviews, sorts, setSort }) => {
                 Latest Accepted Reviews
               </TableCell>
               <TableCell className="!bg-widget" align="right" colSpan={3}>
-                <TextFieldInput data={sorts} select={true} fullWidth={false} change={(value) => setSort(value.target.value)} />
+                <TextFieldInput outLine={false} data={sorts} select={true} fullWidth={false} change={(value) => setSort(value.target.value)} />
               </TableCell>
             </TableRow>
           </TableHead>

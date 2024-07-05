@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material"
 import { MenuItem, Box } from "@mui/material"
 
-const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', change, fullWidth = true }) => {
+const TextFieldInput = ({ label, select = false, data = [], padding = '', minW = '', change, fullWidth = true, outLine = true, variant = 'outlined', placeholder = '', type = '' }) => {
   return (
     <TextField
       className={`${padding} `}
@@ -19,13 +19,12 @@ const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', 
           color: 'var(--text)'
         },
         '.MuiSelect-select': {
-          textTransform: 'capitalize'
+          textTransform: 'capitalize',
+          minWidth: minW
         },
-
         '.MuiOutlinedInput-notchedOutline': {
-          border: '0!important'
-        }
-
+          border: !outLine ? '0!important' : '1px solid var(--input-border)!important',
+        },
 
       }}
       SelectProps={{
@@ -42,9 +41,12 @@ const TextFieldInput = ({ label, select = false, data, padding = '', minW = '', 
           }
         }
       }}
-      // fullWidth={fullWidth}
       focused
       defaultValue={data[0]}
+      variant={variant}
+      fullWidth={fullWidth}
+      placeholder={placeholder}
+      type={type}
     >
       {
         // select &&

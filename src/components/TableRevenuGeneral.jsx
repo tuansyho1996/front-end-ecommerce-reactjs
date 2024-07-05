@@ -1,12 +1,13 @@
-import { TableContainer, Table, TableHead, TableRow, TableCell, Paper, TableBody } from "@mui/material"
+import { TableContainer, Table, TableHead, TableRow, TableCell, Paper, TableBody, } from "@mui/material"
 
 
 
-const TableRevenuGeneral = ({ rows, bg = '' }) => {
+const TableRevenuGeneral = ({ rows, bg = '', width = '100%' }) => {
   return (
     <TableContainer component={Paper}
       style={{
         backgroundColor: bg ? bg : '',
+        width: width
       }}
     >
       <Table aria-label="simple table" padding="checkbox" >

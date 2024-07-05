@@ -69,8 +69,8 @@ const Orders = () => {
           <RangeDate />
         </div>
         <div className="flex gap-5">
-          <TextFieldInput select={true} data={select.category} change={(e) => setCategory(e.target.value)} />
-          <TextFieldInput select={true} data={select.sort} change={(e) => setSort(e.target.value)} />
+          <TextFieldInput select={true} data={select.category} change={(e) => setCategory(e.target.value)} minW="150px" />
+          <TextFieldInput select={true} data={select.sort} change={(e) => setSort(e.target.value)} minW="150px" />
         </div>
       </div>
       <div className="grid grid-cols-6 gap-5 my-5">

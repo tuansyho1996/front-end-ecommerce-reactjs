@@ -22,21 +22,32 @@ import BannerOffers from '@pages/Products/BannerOffers'
 import Orders from '@pages/Orders'
 import Statistics from '@pages/Statistics'
 import Reviews from '@pages/Reviews'
+import Customers from '@pages/Customers'
+import Transactions from '@pages/Transactions'
+import Login from '@pages/Login'
+import { useLocation } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
   const { theme, toggleTheme } = useTheme()
+  const location = useLocation()
+  console.log(location.pathname)
   return (
     <>
       <ThemeProvider theme={{ theme: theme }}>
         <ThemeStyles />
-        <div className="app">
-          <div className="app_content">
-            <AppBar
-              toggleTheme={toggleTheme}
-              theme={theme}
-            />
+        <div className={location.pathname !== '/login' ? 'app' : ''}>
+          <div className={location.pathname !== '/login' ? 'app_content' : ''}>
+            {
+              location.pathname !== '/login' &&
+              <AppBar
+                toggleTheme={toggleTheme}
+                theme={theme}
+              />
+            }
+
             <Routes>
+              <Route path='/login' element={<Login />} />
               <Route path='/' element={<SalesAnalytics />} />
               <Route path='/sellers-list' element={<SellerLists />} />
               <Route path='/sellers-table' element={<SellerTable />} />
@@ -51,6 +62,8 @@ function App() {
               <Route path='/orders' element={<Orders />} />
               <Route path='/statistics' element={<Statistics />} />
               <Route path='/reviews' element={<Reviews />} />
+              <Route path='/customers' element={<Customers />} />
+              <Route path='/transactions' element={<Transactions />} />
             </Routes>
           </div>
         </div>
