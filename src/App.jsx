@@ -26,6 +26,7 @@ import Customers from '@pages/Customers'
 import Transactions from '@pages/Transactions'
 import Login from '@pages/Login'
 import { useLocation } from 'react-router-dom'
+import CreateShop from '@pages/Dashboard/CreateShop'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -64,6 +65,7 @@ function App() {
               <Route path='/reviews' element={<Reviews />} />
               <Route path='/customers' element={<Customers />} />
               <Route path='/transactions' element={<Transactions />} />
+              <Route path='/shop/create' element={<CreateShop />} />
             </Routes>
           </div>
         </div>
