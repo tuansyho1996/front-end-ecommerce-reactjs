@@ -12,7 +12,6 @@ const SwiperProducts = ({ category = 'electronics' }) => {
   useEffect(() => {
     setCurrentProduct(products.filter(product => product.category === category).slice(0, 6))
   }, [])
-  console.log('products', currentProduct)
   return (
     <>
       <Swiper

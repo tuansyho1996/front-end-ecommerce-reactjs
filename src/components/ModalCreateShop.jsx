@@ -37,10 +37,10 @@ const ModalCreateShop = ({ isOpen, handleClose }) => {
   }, [logo])
 
   const selectFileLogo = (event) => {
-    if (!event.target.files || !event.target.files.length === 0) {
-      setLogo(null)
-      return
-    }
+    // if (!event.target.files || !event.target.files.length === 0) {
+    //   setLogo(null)
+    //   return
+    // }
     setLogo(event.target.files[0])
   }
   const handleCreateShop = async () => {
@@ -68,7 +68,6 @@ const ModalCreateShop = ({ isOpen, handleClose }) => {
     setPassword('')
     setConfirmPassword('')
     setLogo(null)
-    setPreview(null)
     setSerity('success')
     setContentAlert(newShop.message)
     setOpen(true)

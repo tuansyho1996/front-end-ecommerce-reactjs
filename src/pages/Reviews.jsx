@@ -21,7 +21,6 @@ const Reviews = () => {
   const [pageActive, setPageActive] = useState(1)
   const [reviewsShow, setReviewsShow] = useState(null)
   const [sort, setSort] = useState('Recent')
-  console.log('check sort', sort)
 
   useEffect(() => {
     const copyReviews = [...reviews]

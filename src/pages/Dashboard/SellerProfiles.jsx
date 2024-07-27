@@ -28,7 +28,6 @@ const SellerProfiles = () => {
     }
   }
 
-  console.log('check log profile', profile)
   return (
     <>
       <PagesHeader title='Seller Profile Details' />

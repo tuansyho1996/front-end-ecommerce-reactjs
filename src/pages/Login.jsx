@@ -2,9 +2,61 @@ import logo from '@assets/logo/zone style-logo/logo.png'
 import imgLogin from '@assets/login.webp'
 import { TextField } from '@mui/material'
 import TextFieldInput from '@widgets/TextFieldInput'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { login } from '@services/admin'
+import { useEffect, useState } from 'react'
+import { Snackbar, Alert } from '@mui/material'
+import { useShop } from '@contexts/shopContext'
 
 const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [severity, setSeverity] = useState('')
+  const [message, setMessage] = useState('')
+  const [openNotification, setOpenNotification] = useState(false)
+  const [isErrorEmail, setIsErrorEmail] = useState(false)
+  const [textErrorEmail, setTextErrorEmail] = useState('')
+  const [isErrorPassword, setIsErrorPassword] = useState(false)
+  const { changeShop, shop } = useShop()
+
+
+  const navigate = useNavigate()
+
+  const handleClickLogin = async () => {
+    const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    if (!email || !email.match(isValidEmail)) {
+      setIsErrorEmail(true)
+      if (!email) {
+        setTextErrorEmail('Invalid Email')
+      }
+      else {
+        setTextErrorEmail('Invalid password')
+      }
+    }
+    if (!password) {
+      setIsErrorPassword(true)
+    }
+    if (isErrorEmail === false && isErrorPassword === false) {
+      const res = await login({ email, password })
+      if (res.status !== 200) {
+        setSeverity('error')
+        setMessage(res.data.message)
+        setOpenNotification(true)
+      }
+      else {
+        changeShop(res.metadata.shop)
+        navigate('/')
+      }
+    }
+  }
+  const onChangeEmail = (e) => {
+    setIsErrorEmail(false)
+    setEmail(e.target.value)
+  }
+  const onChangePassword = (e) => {
+    setIsErrorPassword(false)
+    setPassword(e.target.value)
+  }
   return (
     <div>
       <div className="grid grid-cols-2 h-screen">
@@ -22,10 +74,12 @@ const Login = () => {
             <p className='text-center'>Etiam quis quam urna. Aliquam odio erat,<br /> accumsan eu nulla in</p>
           </div>
           <div className="flex flex-col gap-3 w-96 items-center">
-            <TextFieldInput label='Email' placeholder='Email' variant='standard' />
-            <TextFieldInput label='Password' placeholder='Password' variant='standard' type='password' />
+            <TextFieldInput label='Email' placeholder='Email' variant='standard' value={email} change={(event) => onChangeEmail(event)}
+              type='email' require={true} error={isErrorEmail} helperText={textErrorEmail} />
+            <TextFieldInput label='Password' placeholder='Password' variant='standard' type='password' value={password} change={(event) => onChangePassword(event)}
+              require={true} error={isErrorPassword} helperText='Password is missing' />
             <Link className='text-accent my-3'>Forgot Password</Link>
-            <button className="px-40 py-3 bg-green rounded-full font-bold">Login</button>
+            <button onClick={() => handleClickLogin()} className="px-40 py-3 bg-green rounded-full font-bold">Login</button>
           </div>
           <div className="relative w-96 my-10 flex items-center justify-center">
             <div className="border w-96  absolute "></div>
@@ -43,6 +97,16 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Snackbar open={openNotification} autoHideDuration={3000} onClose={() => setOpenNotification(false)}>
+        <Alert
+          onClose={() => setOpenNotification(false)}
+          severity={severity}
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {message}
+        </Alert>
+      </Snackbar>
     </div>
   )
 }

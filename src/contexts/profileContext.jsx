@@ -7,7 +7,6 @@ export const ProfileProvider = ({ children }) => {
   const [profile, setProfile] = useState(null)
 
   const changeProfile = (profile) => {
-    console.log('check change profile', profile)
     setProfile(profile)
   }
 

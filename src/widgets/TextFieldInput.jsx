@@ -1,9 +1,11 @@
 import { TextField } from "@mui/material"
 import { MenuItem, Box } from "@mui/material"
 
-const TextFieldInput = ({ value = '', label, select = false, data = [], padding = '', minW = '', change, fullWidth = true, outLine = true, variant = 'outlined', placeholder = '', type = '' }) => {
+const TextFieldInput = ({ error = false, helperText, require = false, value = '', label, select = false, data = [], padding = '', minW = '', change, fullWidth = true, outLine = true, variant = 'outlined', placeholder = '', type = '' }) => {
   return (
     <TextField
+      error={error}
+      helperText={error ? helperText : false}
       className={`${padding} `}
       select={select}
       onChange={change}
@@ -46,6 +48,7 @@ const TextFieldInput = ({ value = '', label, select = false, data = [], padding 
       fullWidth={fullWidth}
       placeholder={placeholder}
       type={type}
+      required={require}
     >
       {
         // select &&

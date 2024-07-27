@@ -28,7 +28,6 @@ const ProductsGrid = () => {
 
   useEffect(() => {
     const productsFilterCtg = products?.filter(product => product.category === categoryActive.category)
-    console.log(productsFilterCtg)
     setCurrentProducts(sortProducts(productsFilterCtg, typeSort))
   }, [categoryActive, typeSort])
 

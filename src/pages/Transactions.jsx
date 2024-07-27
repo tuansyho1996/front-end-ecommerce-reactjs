@@ -23,7 +23,6 @@ const Transactions = () => {
     else {
       copyTransactions = sortTransactions(copyTransactions, sortActive).slice(pageActive * transactionsPerPage - transactionsPerPage, pageActive * transactionsPerPage)
     }
-    console.log(copyTransactions.length)
     setTransactionsShow(copyTransactions)
   }, [sortActive, pageActive])
   return (

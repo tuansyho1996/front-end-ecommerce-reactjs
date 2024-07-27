@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './styles/index.scss'
@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import { useTheme } from './contexts/themeContext'
 import ThemeStyles from './styles/theme'
 import { AppBar } from './layouts/Appbar'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import SalesAnalytics from '@pages/Dashboard/SalesAnalytics'
 import SellerLists from '@pages/Dashboard/SellerLists'
 import SellerTable from '@pages/Dashboard/SellerTable'
@@ -26,13 +26,29 @@ import Customers from '@pages/Customers'
 import Transactions from '@pages/Transactions'
 import Login from '@pages/Login'
 import { useLocation } from 'react-router-dom'
-import CreateShop from '@pages/Dashboard/CreateShop'
+import { useShop } from '@contexts/shopContext'
+import { getShop } from '@services/admin'
+import ImportData from '@pages/ImportData'
+
+const profileShop = await getShop()
 
 function App() {
   const [count, setCount] = useState(0)
   const { theme, toggleTheme } = useTheme()
   const location = useLocation()
-  console.log(location.pathname)
+  const { shop, changeShop } = useShop()
+  const navigate = useNavigate()
+  useEffect(() => {
+    changeShop(profileShop?.metadata)
+  }, [])
+  useEffect(() => {
+    if (location.pathname === '/login' && shop) {
+      navigate(-1)
+    }
+    if (location.pathname !== '/login' && !shop) {
+      navigate('/login')
+    }
+  }, [shop])
   return (
     <>
       <ThemeProvider theme={{ theme: theme }}>
@@ -46,7 +62,6 @@ function App() {
                 theme={theme}
               />
             }
-
             <Routes>
               <Route path='/login' element={<Login />} />
               <Route path='/' element={<SalesAnalytics />} />
@@ -65,7 +80,7 @@ function App() {
               <Route path='/reviews' element={<Reviews />} />
               <Route path='/customers' element={<Customers />} />
               <Route path='/transactions' element={<Transactions />} />
-              <Route path='/shop/create' element={<CreateShop />} />
+              <Route path='/import-many-data' element={<ImportData />} />
             </Routes>
           </div>
         </div>
