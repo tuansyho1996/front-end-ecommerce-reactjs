@@ -5,6 +5,7 @@ const ShopContext = createContext(undefined)
 export const ShopProvider = ({ children }) => {
   const [shop, setShop] = useState(null)
   const changeShop = (shop) => {
+    console.log(shop)
     setShop(shop)
   }
 

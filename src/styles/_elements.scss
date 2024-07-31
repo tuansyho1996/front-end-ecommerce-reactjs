@@ -860,3 +860,6 @@ th.MuiTableCell-root,td.MuiTableCell-root{
 #preview-logo:hover #remove-logo {
   display: inline!important;
 }
+.preview-logo:hover .remove-logo {
+  display: inline!important;
+}

@@ -6,6 +6,8 @@ import { useEffect, useState } from "react"
 import NotificationsPanel from "@ui/NotificationsPanel"
 import MessagesPanel from "@ui/MessagesPanel"
 import SideBar from "./SideBar"
+import { useNavigate } from "react-router-dom"
+import { useShop } from "@contexts/shopContext"
 
 
 const LocaleMenu = ({ active, setActive, setOpen }) => {
@@ -40,14 +42,12 @@ export const AppBar = ({ theme, toggleTheme }) => {
   const [openNotification, setOpenNotification] = useState(false)
   const [openMessages, setOpenMessages] = useState(false)
   const [openSideBar, setOpenSideBar] = useState(false)
-
+  const navigate = useNavigate()
+  const { shop } = useShop()
   useEffect(() => {
     const locale = LOCALES.find(item => item.alias === activeLocale)
     setFlagActive(locale.flag)
   }, [activeLocale])
-
-
-
   return (
     <Headroom>
       <div className="flex items-center justify-between">
@@ -101,9 +101,13 @@ export const AppBar = ({ theme, toggleTheme }) => {
               <span>2</span>
             </span>
           </div>
-          <div className="flex items-center justify-center account bg-blue-900 rounded-full w-[50px] h-[50px]">
-            <i className="icon-user text-2xl" />
+          <div className="flex flex-col gap-2">
+            <button onClick={() => navigate('/profile')} className="flex items-center justify-center account bg-blue-900 rounded-full w-[50px] h-[50px]">
+              {/* <i className="icon-user text-2xl" /> */}
+              <img className=" rounded-full w-[50px] h-[50px]" src={shop.logo} alt="" />
+            </button>
           </div>
+
         </div>
         <NotificationsPanel
           isOpen={openNotification}

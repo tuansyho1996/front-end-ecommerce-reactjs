@@ -23,6 +23,26 @@ const createNewShop = async (data, file) => {
     return error.response
   }
 }
+const editShop = async (data) => {
+  try {
+    const res = await axios.post('/v1/api/shops/edit-information', data)
+    return res
+  } catch (error) {
+    console.log(error)
+  }
+}
+const changeAvatar = async ({ logo, userId }) => {
+  try {
+    const formData = new FormData();
+    formData.append("file", logo)
+    formData.append("userId", userId)
+    const res = await axios.post('/v1/api/shops/change-avatar', formData)
+    return res
+
+  } catch (error) {
+    console.log(error)
+  }
+}
 const login = async (data) => {
   try {
     const res = await axios.post('/v1/api/shop/login', data)
@@ -47,10 +67,13 @@ const importManyShops = async (data) => {
     console.log(error)
   }
 }
+
 export {
   getAllShops,
   createNewShop,
   login,
   getShop,
-  importManyShops
+  importManyShops,
+  editShop,
+  changeAvatar
 }

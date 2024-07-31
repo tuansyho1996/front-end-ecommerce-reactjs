@@ -43,7 +43,7 @@ const TextFieldInput = ({ error = false, helperText, require = false, value = ''
         }
       }}
       focused
-      defaultValue={select ? data[0] : value}
+      value={select ? data[0] : value}
       variant={variant}
       fullWidth={fullWidth}
       placeholder={placeholder}

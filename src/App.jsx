@@ -29,6 +29,7 @@ import { useLocation } from 'react-router-dom'
 import { useShop } from '@contexts/shopContext'
 import { getShop } from '@services/admin'
 import ImportData from '@pages/ImportData'
+import Profile from '@pages/Profile'
 
 const profileShop = await getShop()
 
@@ -38,6 +39,7 @@ function App() {
   const location = useLocation()
   const { shop, changeShop } = useShop()
   const navigate = useNavigate()
+  console.log('check profile', profileShop?.metadata)
   useEffect(() => {
     changeShop(profileShop?.metadata)
   }, [])
@@ -81,6 +83,7 @@ function App() {
               <Route path='/customers' element={<Customers />} />
               <Route path='/transactions' element={<Transactions />} />
               <Route path='/import-many-data' element={<ImportData />} />
+              <Route path='/profile' element={<Profile />} />
             </Routes>
           </div>
         </div>
